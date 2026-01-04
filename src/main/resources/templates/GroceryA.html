@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion</title>
+    <link rel="stylesheet" href="navbar.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f46075;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .product {
+            flex: 0 0 30%;
+            margin: 10px 0;
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h3 {
+            color: #444;
+            margin: 15px 0 10px;
+        }
+        .product p {
+            color: #888;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .product button {
+            background-color: #f46075;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .product button:hover {
+            background-color: #e6465d;
+        }
+        .footer {
+            background-color: #f46075;
+            color: white;
+            padding: 20px 0;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px 20px;
+        }
+
+        .footer-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+		
+	
+
+        .footer-section p,
+        .footer-section ul,
+        .footer-section li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <!-- Left: Logo and Website Name -->
+        <div class="logo">
+            <img src="logo.jpeg" alt="Website Logo">
+            <h1>QuickCart</h1>
+        </div>
+
+        <!-- Right: Navigation Bar -->
+        <nav class="nav-bar">
+			<a th:href="@{/home}">Home</a>
+			<a th:href="@{/categories}">Categories</a>
+			<a th:href="@{/myorders}">My Orders</a>
+			<a th:href="@{/account}">Account</a>
+			<a th:href="@{/sellProduct}">Sell on Website</a>
+			<a th:href="@{/contact}">Contact Us</a>
+			<a th:href="@{/about}">About Us</a>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <h1>Grocery</h1>
+        <div class="row">
+            <div class="product">
+                
+                <img src="/images/hp_sbf_m_pasta-sauces-&-more_480_270723.webp"alt="Product 1">
+                <h3>Pasta, Sauces & more</h3>
+                <p>300 Rs</p>
+                <a th:href="@{/form}">
+                <button>Place Order</button>
+                </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/hp_f&v_m_fresh-fruits_480_250923.webp"alt="Product 1">
+                <h3>Fresh fruits</h3>
+                <p>300 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/hp_f&v_m_cuts-&-exotics_480_250923.webp"alt="Cuts & Exotics">
+                <h3>Cuts & Exotics</h3>
+                <p>300 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product">
+                
+                <img src="/images/hp_bev_m_health-drinks-&-supplements_480_250923.webp"alt="Product 1">
+                <h3>Health drinks & Supplements</h3>
+                <p>500 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/hp_b&h_m_perfumes_480_250923.webp"alt="Product 1">
+                <h3>Scented Perfumes</h3>
+                <p>600 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/hp_GM-cleaning-needs_m_250723_06.webp"alt="Product 1">
+                <h3>Cleaning essentials</h3>
+                <p>800 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product">
+                
+                <img src="/images/hp_c&h_m_detergents-&-fabric-care_480_250723.webp"alt="Product 1">
+                <h3>Detergents & Fabric care
+                </h3>
+                <p>300Rs</p>
+               <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/hp_bev_m_soft-drinks-&-more_480_250923.webp"alt="Product 1">
+                <h3>Soft Drinks</h3>
+                <p>300 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/hp_f&v_m_herbs-&-seasoning_480_250923.webp"alt="Product 1">
+                <h3>Herbs</h3>
+                <p>450 Rs</p>
+               <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We are dedicated to providing the best shopping experience with a focus on quality, innovation, and customer satisfaction.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+				<ul>
+				                <li><a th:href="@{/home}">Home</a></li>
+				                <li><a th:href="@{/about}">About</a></li>
+				                <li><a th:href="@{/categories}">Shop</a></li>
+				                <li><a th:href="@{/contact}">Contact</a></li>
+				            </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: support@quickcart.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Main Street, Anywhere, World</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 QuickCart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: #f46075;
+            color: #fff;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .contact-icons img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+        }
+        input, textarea {
+            width: 90%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #f46075;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+  .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        
+    </style>
+    
+</head>
+<body>
+    
+    <header class="header">
+        <!-- Left: Logo and Website Name -->
+        <div class="logo">
+            <img src="logo.jpeg" alt="Website Logo">
+            <h1>QuickCart</h1>
+        </div>
+
+        <!-- Right: Navigation Bar -->
+        <nav class="nav-bar">
+            <a th:href="@{/home}">Home</a>
+            <a th:href="@{/categories}">Categories</a>
+            <a th:href="@{/myorders}">My Orders</a>
+            <a th:href="@{/account}">Account</a>
+            <a th:href="@{/sellProduct}">Sell on Website</a>
+            <a th:href="@{/contact}">Contact Us</a>
+            <a th:href="@{/about}">About Us</a>
+        </nav>
+    </header>
+    
+    <h1>Contact Us</h1>
+    <div class="contact-icons">
+        <img src="whatapp.jpeg" alt="WhatsApp" onclick="window.location.href='https://wa.me/yourphonenumber'">
+        <img src="call.png" alt="Call" onclick="window.location.href='tel:+1234567890'">
+        <img src="email.jpg" alt="Email" onclick="window.location.href='mailto:your@email.com'">
+    </div>
+    
+    <div class="contact-form">
+        <h2>Get in Touch</h2>
+        <form th:action="@{/submitForm}" th:object="${user}" method="post" onsubmit="showSuccessAlert()">
+            <input type="text" placeholder="Your Name" th:field="*{name}" required>
+            <input type="email" placeholder="Your Email" th:field="*{email}" required>
+            <input type="tel" placeholder="Your Phone Number" th:field="*{number}" required>
+            <textarea placeholder="Your Message" th:field="*{message}" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    
+   <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 QuickCart. All Rights Reserved.</p>
+    </div>
+	
+	<script>
+		        function showSuccessAlert() {
+		            alert("Response sent successfully...!");
+		        }
+		    </script>
+    
+</body>
+</html>

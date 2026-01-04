@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion</title>
+    <link rel="stylesheet" href="navbar.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f46075;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .product {
+            flex: 0 0 30%;
+            margin: 10px 0;
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h3 {
+            color: #444;
+            margin: 15px 0 10px;
+        }
+        .product p {
+            color: #888;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .product button {
+            background-color: #f46075;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .product button:hover {
+            background-color: #e6465d;
+        }
+        .footer {
+            background-color: #f46075;
+            color: white;
+            padding: 20px 0;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 10px 20px;
+        }
+
+        .footer-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer-section p,
+        .footer-section ul,
+        .footer-section li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            padding-top: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <!-- Left: Logo and Website Name -->
+        <div class="logo">
+            <img src="logo.jpeg" alt="Website Logo">
+            <h1>QuickCart</h1>
+        </div>
+
+        <!-- Right: Navigation Bar -->
+        <nav class="nav-bar">
+			<a th:href="@{/home}">Home</a>
+			<a th:href="@{/categories}">Categories</a>
+			<a th:href="@{/myorders}">My Orders</a>
+			<a th:href="@{/account}">Account</a>
+			<a th:href="@{/sellProduct}">Sell on Website</a>
+			<a th:href="@{/contact}">Contact Us</a>
+			<a th:href="@{/about}">About Us</a>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <h1>Electronics</h1>
+        <div class="row">
+            <div class="product">
+                
+                <img src="/images/apple.webp"alt="Product 1">
+                <h3>Apple iPhone 16 pro</h3>
+                <p>1,60,400 Rs</p>
+               <a th:href="@{/form}">
+                <button>Place Order</button>
+                </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/dj.webp"alt="Product 1">
+                <h3>DJ digital media</h3>
+                <p>3,000 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/speaker.webp"alt="Cuts & Exotics">
+                <h3>Bluetooth Speaker</h3>
+                <p>5,500 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product">
+                
+                <img src="/images/watch3.jpeg"alt="Product 1">
+                <h3>MIVI earphones</h3>
+                <p>4,000 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/neckband.webp"alt="Product 1">
+                <h3>ALPHA neckband</h3>
+                <p>6,400 Rs</p>
+               <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/dell.avif"alt="Product 1">
+                <h3>Dell Ultrasharp </h3>
+                <p>1,10,999Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product">
+                
+                <img src="/images/inspiron.jpeg"alt="Product 1">
+                <h3>Dell Inspiron
+                </h3>
+                <p>80,000Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/TV img.jpeg"alt="Product 1">
+                <h3>Samsung Crystal</h3>
+                <p>45,000 Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+            <div class="product">
+                
+                <img src="/images/refri.webp"alt="Product 1">
+                <h3>Haler Refrigerator</h3>
+                <p>70,500Rs</p>
+                <a th:href="@{/form}">
+                    <button>Place Order</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We are dedicated to providing the best shopping experience with a focus on quality, innovation, and customer satisfaction.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+				<ul>
+				                <li><a th:href="@{/home}">Home</a></li>
+				                <li><a th:href="@{/about}">About</a></li>
+				                <li><a th:href="@{/categories}">Shop</a></li>
+				                <li><a th:href="@{/contact}">Contact</a></li>
+				            </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: support@quickcart.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Main Street, Anywhere, World</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 QuickCart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <style>
+        .header {
+            width: 98%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: #f46075;
+            color: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background:#fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #f46075;
+        }
+        .order {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .order:last-child {
+            border-bottom: none;
+        }
+        .order img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .order img:hover{
+            width: 160px;
+            height: 160px;
+            border-radius: 8px;
+        }
+        .order-info {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .order-info h3 {
+            margin: 0;
+            color: #555;
+        }
+        .order-info h3:hover {
+           color: #f46075;
+        }
+        .order-info p{
+             margin: 5px 0;
+            color: #777;
+        }
+        
+        .status {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .status.completed {
+            color: #28a745;
+        }
+        .status.pending {
+            color: #ffc107;
+        }
+        
+         .footer {
+    background-color: #f46075; /* Footer background color */
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #333;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+    font-size: 0.9rem;
+}
+       
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <!-- Left: Logo and Website Name -->
+        <div class="logo">
+            <img src="logo.jpeg" alt="Website Logo">
+            <h1>QuickCart</h1>
+        </div>
+
+        <!-- Right: Navigation Bar -->
+        <nav class="nav-bar">
+            <a th:href="@{/home}">Home</a>
+            <a th:href="@{/categories}">Categories</a>
+            <a th:href="@{/myorders}">My Orders</a>
+            <a th:href="@{/account}">Account</a>
+            <a th:href="@{/sellProduct}">Sell on Website</a>
+            <a th:href="@{/contact}">Contact Us</a>
+            <a th:href="@{/about}">About Us</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1 >My Recent Orders</h1>
+        <div class="order">
+            <img src="smartwatch.webp" alt="Product Image">
+            <div class="order-info">
+                <h3>Order #12345</h3>
+                <p>Product Name: Smart Watch</p>
+                <p>Date: 2025-01-01</p>
+            </div>
+            <span class="status completed">Completed</span>
+        </div>
+        <div class="order">
+            <img src="furni.png" alt="Product Image">
+            <div class="order-info">
+                <h3>Order #12346</h3>
+                <p>Product Name: Furniture</p>
+                <p>Date: 2025-01-03</p>
+            </div>
+            <span class="status pending">Pending</span>
+        </div>
+        <div class="order">
+            <img src="cosmetics.jpg" alt="Product Image">
+            <div class="order-info">
+                <h3>Order #12347</h3>
+                <p>Product Name: Cosmetics</p>
+                <p>Date: 2025-01-05</p>
+            </div>
+            <span class="status">In Progress</span>
+        </div>
+        <div class="order">
+            <img src="groc.png" alt="Product Image">
+            <div class="order-info">
+                <h3>Order #12348</h3>
+                <p>Product Name: Grocery</p>
+                <p>Date: 2025-01-06</p>
+            </div>
+            <span class="status completed">Completed</span>
+        </div>
+        <div class="order">
+            <img src="medi.png" alt="Product Image">
+            <div class="order-info">
+                <h3>Order #12349</h3>
+                <p>Product Name: Medicines</p>
+                <p>Date: 2025-01-08</p>
+            </div>
+            <span class="status pending">Pending</span>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing the best shopping experience with a focus on quality, innovation, and customer satisfaction.</p>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/categories}">Shop</a></li>
+                <li><a th:href="@{/contact}">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@quickcart.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Main Street, Anywhere, World</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 QuickCart. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

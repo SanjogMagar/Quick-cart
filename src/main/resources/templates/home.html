@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        /* yellow-#f8c552 pink-#fb667c */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+             min-height: 100vh;
+        } 
+        
+        .dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #f46075;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s ease-out; /* Smooth follow effect */
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: #f46075;
+            color: #fff;
+        }
+        
+         .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.5rem;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #f46075;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .products {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product-grid {
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .product-card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #f46075;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #e0485d;
+        }
+
+
+        .main {
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .footer {
+    background-color: #f46075; /* Footer background color */
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #333;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+    font-size: 0.9rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="dot" id="dot"></div>
+    <header class="header">
+        <!-- Left: Logo and Website Name -->
+        <div class="logo">
+            <img src="logo.jpeg" alt="Website Logo">
+            <h1>QuickCart</h1>
+        </div>
+
+        <!-- Right: Navigation Bar -->
+        <nav class="nav-bar">
+            <a th:href="@{/home}">Home</a>
+            <a th:href="@{/categories}">Categories</a>
+            <a th:href="@{/myorders}">My Orders</a>
+            <a th:href="@{/account}">Account</a>
+            <a th:href="@{/sellProduct}">Sell on Website</a>
+            <a th:href="@{/contact}">Contact Us</a>
+            <a th:href="@{/about}">About Us</a>
+        </nav>
+    </header>
+    <div class="carousel">
+        <div class="carousel-images" id="carouselImages">
+            <img src="Grocery.png" alt="Slide 1">
+            <img src="Fashion.png" alt="Slide 2">
+            <img src="Beauty.png" alt="Slide 3">
+            <img src="Medicine.png" alt="Slide 4">
+            <img src="Electronic.png" alt="Slide 5">
+            <img src="Appliances.png" alt="Slide 6">
+            <img src="Furniture.png" alt="Slide 7">
+            <img src="Stationery.png" alt="Slide 8">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prevButton">&#8249;</button>
+            <button id="nextButton">&#8250;</button>
+        </div>
+    </div>
+    
+     <div class="scroll-indicator">Scroll down ↓</div>
+    
+        <div class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="grocery1.jpg" alt="Product 1">
+                <h3>Bakery and Dairy</h3>
+                <p>Category: Grocery</p>
+				<a  th:href="@{/GroceryA}" 
+				           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+				                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+				                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+				            Check it out
+				        </a>
+            </div>
+            <div class="product-card">
+                <img src="grocery2.jpg" alt="Product 2">
+                <h3>Rice and Grains</h3>
+                <p>Category: Grocery</p>
+				<a  th:href="@{/GroceryA}" 
+								           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+								                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+								                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+								            Check it out
+								        </a>
+            </div>
+            <div class="product-card">
+                <img src="grocery3.jpg" alt="Product 3">
+                <h3>Veggies</h3>
+                <p>Category: Grocery</p>
+				<a  th:href="@{/GroceryA}" 
+								           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+								                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+								                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+								            Check it out
+								        </a>
+            </div>
+            <div class="product-card">
+                <img src="grocery4.jpg" alt="Product 4">
+                <h3>Snacks</h3>
+                <p>Category: Grocery</p>
+				<a  th:href="@{/GroceryA}" 
+								           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+								                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+								                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+								            Check it out
+								        </a>
+            </div>
+        </div>
+         <div class="product-grid">
+            <div class="product-card">
+                <img src="lifestyle1.webp" alt="Product 1">
+                <h3>Fashion for Women</h3>
+                <p>Category: Fashion</p>
+				<a  th:href="@{/fashion}" 
+								           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+								                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+								                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+								            Check it out
+								        </a>
+            </div>
+            <div class="product-card">
+                <img src="lifestyle2.jpeg" alt="Product 2">
+                <h3>Fashion for Men</h3>
+                <p>Category: Fashion</p>
+				<a  th:href="@{/fashion}" 
+												           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+												                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+												                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+												            Check it out
+												        </a>
+            </div>
+            <div class="product-card">
+                <img src="lifestyle3.webp" alt="Product 3">
+                <h3>Cosmetics</h3>
+                <p>Category: Beauty</p>
+				<a  th:href="@{/cosmetics}" 
+												           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+												                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+												                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+												            Check it out
+												        </a>
+            </div>
+            <div class="product-card">
+                <img src="lifestyle4.jpg" alt="Product 4">
+                <h3>Medicines</h3>
+                <p>Category: Health Care</p>
+				<a  th:href="@{/medicine}" 
+												           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+												                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+												                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+												            Check it out
+												        </a>
+            </div>
+        </div>
+     <div class="product-grid">
+            <div class="product-card">
+                <img src="electronic1.png" alt="Product 1">
+                <h3>Phones</h3>
+                <p>Category: Electronic</p>
+				<a  th:href="@{/electronic}" 
+												           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+												                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+												                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+												            Check it out
+												        </a>
+            </div>
+            <div class="product-card">
+                <img src="electronic2.jpg" alt="Product 2">
+                <h3>Laptops</h3>
+                <p>Category: Electronic</p>
+				<a  th:href="@{/electronic}" 
+												           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+												                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+												                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+												            Check it out
+												        </a>
+            </div>
+            <div class="product-card">
+                <img src="electronic3.webp" alt="Product 3">
+                <h3>Headphones</h3>
+                <p>Category: Electronic</p>
+				<a  th:href="@{/electronic}" 
+																           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+																                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+																                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+																            Check it out
+																        </a>
+            </div>
+            <div class="product-card">
+                <img src="electronic4.jpg" alt="Product 4">
+                <h3>Smart Home Devices </h3>
+                <p>Category: Home Appliances and Furniture</p>
+				<a  th:href="@{/electronic}" 
+																           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+																                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+																                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+																            Check it out
+																        </a>
+            </div>
+        </div>
+     <div class="product-grid">
+            <div class="product-card">
+                <img src="stationery1.jpg" alt="Product 1">
+                <h3>Art Supplies</h3>
+                <p>Category: Stationery</p>
+				<a  th:href="@{/stationary}" 
+																           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+																                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+																                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+																            Check it out
+																        </a>
+            </div>
+            <div class="product-card">
+                <img src="stationery2.jpg" alt="Product 2">
+                <h3>School Supplies</h3>
+                <p>Category: Stationery</p>
+				<a  th:href="@{/stationary}" 
+																				           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+																				                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+																				                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+																				            Check it out
+																				        </a>
+            </div>
+            <div class="product-card">
+                <img src="stationery3.jpg" alt="Product 3">
+                <h3>Office Supplies</h3>
+                <p>Category: Stationery</p>
+				<a  th:href="@{/stationary}" 
+																				           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+																				                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+																				                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+																				            Check it out
+																				        </a>
+            </div>
+            <div class="product-card">
+                <img src="stationery4.webp" alt="Product 4">
+                <h3>Kids Stationery</h3>
+                <p>Category: Stationery</p>
+				<a  th:href="@{/stationary}" 
+																				           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+																				                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+																				                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+																				            Check it out
+																				        </a>
+            </div>
+        </div>
+
+    </div>
+    
+  <section style="padding: 50px 20px; text-align: center;">
+    <div style="
+        max-width: 800px; 
+        margin: 0 auto; 
+        padding: 30px; 
+        background-color: white; 
+        border-radius: 10px; 
+        box-shadow: 0 1px 6px #f46075, 0 1px 3px #f46075;
+    ">
+        <img src="logo.jpeg" height="80px" width="80" style="border-radius: 40px">
+        <h2 style="font-size: 2rem; color: #333; margin-bottom: 20px;">About Us</h2>
+        <p style="font-size: 1.1rem; color: #666; line-height: 1.6;">
+            Welcome to QuickCart! We are dedicated to providing the best services and products to our customers. 
+            With a passion for excellence and a commitment to quality, we strive to make your experience unforgettable.
+        </p>
+        <p style="font-size: 1.1rem; color: #666; line-height: 1.6;">
+            Discover more about our mission, values, and the team behind it all.
+        </p>
+        <a  th:href="@{/about}" 
+           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #f46075; 
+                  color: white; text-decoration: none; font-size: 1rem; border-radius: 5px; 
+                  transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+            Learn More
+        </a>
+    </div>
+</section>
+
+
+
+    <main class="main">
+        <h2 style="margin-bottom: 5px">Our Happy Customers</h2>
+        <p>Look what they say...!</p>
+    </main>
+    
+     <div class="container">
+        
+        <div class="card">
+            <div class="imgbox">
+                <img src="customer1.jfif" alt="flower">
+            </div>
+            <h2>Emma Johnson</h2>
+            <div class="content">
+                <p>"Fantastic shopping experience! The product quality is excellent, and the delivery was super quick. Highly impressed!"</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imgbox">
+                <img src="customer2.jfif" alt="paraglyding">
+            </div>
+            <h2> Sophia Müller</h2>
+            <div class="content">
+                <p>"The attention to detail is amazing! I love how unique and high-quality the items are. Worth every penny!"</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="imgbox">
+                <img src="customer3.jfif" alt="leaves">
+            </div>
+            <h2>Isabella Rossi</h2>
+            <div class="content">
+                <p>"Chic and stylish products that are perfect for gifting. I’m thrilled with the purchase and will definitely recommend this store to others!"</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="imgbox">
+                <img src="customer4.jfif" alt="leaves">
+            </div>
+            <h2> Liam O'Connor</h2>
+            <div class="content">
+                <p>"Beautifully crafted products with a personal touch. The website is easy to navigate, and the service is top-class. Will shop again!"</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="imgbox">
+                <img src="customer5.jfif" alt="leaves">
+            </div>
+            <h2>Hiroshi Tanaka </h2>
+            <div class="content">
+                <p>"Efficient service and excellent designs! The product I ordered was exactly as shown on the website. I'm very happy with my purchase."</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing the best shopping experience with a focus on quality, innovation, and customer satisfaction.</p>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/about}">About</a></li>
+                <li><a th:href="@{/categories}">Shop</a></li>
+                <li><a th:href="@{/contact}">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@quickcart.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Main Street, Anywhere, World</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 QuickCart. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script>
+        const carouselImages = document.getElementById('carouselImages');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const totalSlides = 8;
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            carouselImages.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+        
+        const dot = document.getElementById('dot');
+
+        document.addEventListener('mousemove', (e) => {
+            // Update dot position to follow the cursor
+            dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+    </script>
+</body>
+</html>

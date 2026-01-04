@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell on Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f1f3f6;
+        }
+
+        .navbar {
+            background-color: #f46075;
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select, textarea, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2874f0;
+            box-shadow: 0 0 5px rgba(40, 116, 240, 0.5);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color:#f46075;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color:#f46075;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .success-message {
+            text-align: center;
+            color: green;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .header {
+            width: 97%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: #f46075;
+            color: #fff;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                margin: 15px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content -->
+     
+    <header class="header">
+        <!-- Left: Logo and Website Name -->
+        <div class="logo">
+            <img src="logo.jpeg" alt="Website Logo">
+            <h1>QuickCart</h1>
+        </div>
+
+        <!-- Right: Navigation Bar -->
+        <nav class="nav-bar">
+            <a th:href="@{/home}">Home</a>
+            <a th:href="@{/categories}">Categories</a>
+            <a th:href="@{/myorders}">My Orders</a>
+            <a th:href="@{/account}">Account</a>
+            <a th:href="@{/sellProduct}">Sell on Website</a>
+            <a th:href="@{/contact}">Contact Us</a>
+            <a th:href="@{/about}">About Us</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Sell Your Product</h2>
+        <form th:action="@{/submit}" th:object="${product}" method="post" onsubmit="showSuccessAlert()"> 
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" placeholder="Enter your product name" th:field="*{name}" required>
+
+            <label for="productCategory">Product Category:</label>
+            <select id="productCategory" name="productCategory" th:field="*{category}" required>
+                <option value="">Select Category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Home Appliances">Home Appliances</option>
+                <option value="Books">Books</option>
+                <option value="Toys">Toys</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="productDescription">Product Description:</label>
+            <textarea id="productDescription" name="productDescription" rows="4" placeholder="Describe your product" th:field="*{description}" required></textarea>
+
+            <label for="productPrice">Product Price (₹):</label>
+            <input type="number" id="productPrice" name="productPrice" placeholder="Enter price in INR" th:field="*{price}" required>
+	
+
+            <label for="companyName">Your Company Name:</label>
+            <input type="text" id="companyName" name="companyName" placeholder="Enter your company name" th:field="*{companyname}" required>
+
+            <button type="submit">Sell on Website</button>
+			</form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 QuickCart. All Rights Reserved.</p>
+    </div>
+	<script>
+	        function showSuccessAlert() {
+	            alert("Product Sold Successfully!");
+	        }
+	    </script>
+    
+</body>
+</html>

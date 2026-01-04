@@ -1,0 +1,468 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name = "viewport"content="width=device-width,initial-scale=1.0">
+		<title>Spring Boot - My web App </title>
+		<link rel = "stylesheet"href="/index.css">
+		<link rel = "stylesheet"href="/footer.css">
+		<link rel = "stylesheet"href="/index2.css">
+		<link rel = "stylesheet"href="/navbar.css">
+		
+
+		<style>
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		
+				     <header class="header">
+				       <!-- Left: Logo and Website Name -->
+				       <div class="logo">
+				           <img src="logo.jpeg" alt="Website Logo">
+				           <h1>QuickCart</h1>
+				       </div>
+
+				       <!-- Right: Navigation Bar -->
+				       <nav class="nav-bar">
+						<a th:href="@{/home}">Home</a>
+						<a th:href="@{/categories}">Categories</a>
+						<a th:href="@{/myorders}">My Orders</a>
+						<a th:href="@{/account}">Account</a>
+						<a th:href="@{/sellProduct}">Sell on Website</a>
+						<a th:href="@{/contact}">Contact Us</a>
+						<a th:href="@{/about}">About Us</a>
+				       </nav>
+				   </header>
+				   
+				   
+				   <!-------------- MENU BAR -------------->
+
+
+				    <div class="belowNavBar">
+
+
+
+				      <div class="smallCard">
+				        <a th:href="@{/GroceryA}" class="anchorA">
+				        <img  src="/images/Grocery.jpeg"  alt="menuIcon1" class="card">
+				        <p>Grocery</p></a>
+
+				      </div>
+
+				      <div class="smallCard">
+				        <a  th:href="@{/stationary}"  class="anchorA">
+				        <img  src="/images/book.webp" alt="menuIcon1" class="card">
+				        <p>Stationary</p></a>
+				      </div>
+
+				      <div class="smallCard">
+				        <a th:href="@{/fashion}"class="anchorA">
+				         <img  src="/images/Jacket.png" alt="menuIcon1" class="card">
+				        <p>Fashion</p></a>
+				      </div>
+					  
+					  <div class="smallCard">
+					       <a th:href="@{/cosmetics}"  class="anchorA">
+					       <img src="/images/lip tint.webp" alt="menuIcon1" class="card">
+					       <p>Cosmetics</p></a>
+					     </div>
+
+					     <!-- <div class="smallCard">
+					       <a href="Home.html" class="anchorA">
+					       <img src="images/menuIcon5.webp" alt="menuIcon1" class="card">
+					       <p>Furniture</p></a>
+					     </div> -->
+
+					     <div class="smallCard">
+					       <a th:href="@{/electronic}"   class="anchorA">
+					       <img src="images/Laptops.png" alt="menuIcon1" class="card">
+					       <p>Electronic</p></a>
+					     </div>
+
+					     <!-- <div class="smallCard">
+					       <img src="images/menuIcon7.webp" alt="menuIcon1" class="card">
+					       <p>Travel</p>
+					     </div> -->
+						 
+						 <div class="smallCard">
+						      <a th:href="@{/medicine}"  class="anchorA">
+						      <img src="images/moov.jpeg" alt="menuIcon1" class="card">
+						      <p>Medicine</p></a>
+						    </div>
+
+						    <!-- <div class="smallCard">
+						      <img src="images/menuIcon9.webp" alt="menuIcon1" class="card">
+						      <p>Bikes</p>
+						    </div> -->
+
+						  </div>
+						  
+						  
+						  <div class="line"></div>
+
+						    <!-------------- MAIN IMG -------------->
+						    <div class="heroSection">
+						      <img class="heroimg" src="/images/headerimg.jpg">
+						    
+						     </div>
+						     
+						    </div>
+						    <div class="line"></div>
+
+						    <!-------------- ITEM SECTION -------------->
+						    <div class="itemSection">
+
+						      <div class="item">
+						        <div class="itemHeadName">
+						          <p>Get Set for Grocery</p>
+						        </div>
+
+						        <div class="viewAllSection">
+						          <div class="viewAllButton">
+						           <a class="anchorimg" th:href="@{/GroceryA}" >
+						            <p class="viewAllText">VIEW ALL</p>
+						          </a>
+						          </div>
+						        </div>
+						      </div>
+							  
+							  
+							  <div class="item">
+							        <img src="/images/hp_sbf_m_pasta-sauces-&-more_480_270723.webp" alt="cloth1" class="itemImg">
+							        <p class="itemDescription">Pasta & Sauces</p>
+							        <a th:href="@{/form}"  >
+							        <p class="buyNowText">Buy Now</p>
+							      </a>
+							      </div>
+
+							      <div class="item">
+							        <img src="/images/30001003_4-fresho-dasheri-mango.webp" alt="cloth2" class="itemImg">
+							        <p class="itemDescription">Fresh fruits</p>
+							          <a th:href="@{/form}"  >
+							          <p class="buyNowText">Buy Now</p>
+							        </a>
+							      </div>
+
+							      <div class="item">
+							        <img src="/images/hp_bev_m_soft-drinks-&-more_480_250923.webp" alt="cloth3" class="itemImg">
+							        <p class="itemDescription">Soft Drinks</p>
+							          <a th:href="@{/form}"  >
+							          <p class="buyNowText">Buy Now</p>
+							        </a>
+							      </div>
+								  
+								  <div class="item">
+								       <img src="/images/hp_f&v_m_herbs-&-seasoning_480_250923.webp" alt="cloth4" class="itemImg">
+								       <p class="itemDescription">herbs</p>
+								          <a th:href="@{/form}"  >
+								         <p class="buyNowText">Buy Now</p>
+								       </a>
+								     </div>
+
+								   </div>
+
+								   <div class="line"></div>
+
+
+								   <div class="itemSection">
+
+								     <div class="item">
+								       <div class="itemHeadName">
+								         <p>Get set for Stationary</p>
+								         
+								       </div>
+
+								       <div class="viewAllSection">
+								         <div class="viewAllButton">
+								           <a class="anchorimg" th:href="@{/stationary}">
+								             <p class="viewAllText">VIEW ALL</p>
+								           </a>
+								         </div>
+								       </div>
+								     </div>
+									 
+									 <div class="item">
+									      <img src="/images/camel color pencil.png" alt="electronic img" class="itemImg">
+									      <p class="itemDescription">Multicolor Pencil</p>
+									         <a th:href="@{/form}"  >
+									        <p class="buyNowText">Buy Now</p>
+									      </a>
+									    </div>
+
+									    <div class="item">
+									      <img src="/images/calci.webp" alt="electronic img" class="itemImg">
+									      <p class="itemDescription">Calculator</p>
+									        <a th:href="@{/form}"  >
+									        <p class="buyNowText">Buy Now</p>
+									      </a>
+									    </div>
+
+									    <div class="item">
+									      <img src="/images/black book.webp" alt="electronic img" class="itemImg">
+									      <p class="itemDescription">Clapone A5 Book</p>
+									        <a th:href="@{/form}"  >
+									        <p class="buyNowText">Buy Now</p>
+									      </a>
+									    </div>
+
+									    <div class="item">
+									      <img src="/images/book.webp" alt="electronic img" class="itemImg">
+									      <p class="itemDescription">Navneet Book</p>
+									         <a th:href="@{/form}"  >
+									        <p class="buyNowText">Buy Now</p>
+									      </a>
+									    </div>
+										
+										
+										</div>
+
+										<div class="line"></div>
+
+										<div class="itemSection">
+
+										  <div class="item">
+										    <div class="itemHeadName">
+										      <p>Fashion Top Deals</p>
+										    </div>
+
+										    <div class="viewAllSection">
+										      <div class="viewAllButton">
+										        <a class="anchorimg" th:href="@{/fashion}">
+										        <p class="viewAllText">VIEW ALL</p>
+										      </a>
+										      </div>
+										    </div>
+										  </div>
+
+										  <div class="item">
+										    <img src="/images/kids.jpeg" alt="cloth1" class="itemImg">
+										    <p class="itemDescription">Kirti fashion</p>
+										     <a th:href="@{/form}"  >
+										    <p class="buyNowText">Buy Now</p>
+										  </a>
+										  </div>
+
+										  
+										  <div class="item">
+										        <img src="/images/saree.jpg" alt="cloth2" class="itemImg">
+										        <p class="itemDescription">Rachel fashion</p>
+										         <a th:href="@{/form}"  >
+										          <p class="buyNowText">Buy Now</p>
+										        </a>
+										      </div>
+
+										      <div class="item">
+										        <img src="/images/Kurta.png" alt="cloth3" class="itemImg">
+										        <p class="itemDescription">Ranbir Kurta</p>
+										          <a th:href="@{/form}"  >
+										          <p class="buyNowText">Buy Now</p>
+										        </a>
+										      </div>
+
+										      <div class="item">
+										        <img src="/images/sandal.webp" alt="cloth4" class="itemImg">
+										        <p class="Bag Charms">Footwear</p>
+										         <a th:href="@{/form}"  >
+										          <p class="buyNowText">Buy Now</p>
+										        </a>
+										      </div>
+											  
+											  </div>
+
+											  <div class="line"></div>
+
+											  <div class="itemSection">
+
+												<div class="item">
+												    <div class="itemHeadName">
+												      <p>Top Deals for Cosmetics</p>
+												    </div>
+
+												    <div class="viewAllSection">
+												      <div class="viewAllButton">
+												        <a class="anchorimg"  th:href="@{/cosmetics}">
+												        <p class="viewAllText">VIEW ALL</p>
+												      </a>
+												      </div>
+												    </div>
+												  </div>
+												  
+												  
+												   <div class="item">
+												        <img src="/images/lip tint.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Earth rhythm Lip teent</p>
+												        <a class="anchorimg" href="form2.html">
+												        <p class="buyNowText">Buy Now</p>
+												      </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/lipstick.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Renee matte Lipstick</p>
+												        <a class="anchorimg" href="form2.html">
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/blush.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Sephora pinch liquid blush</p>
+												        <a class="anchorimg" href="form2.html">
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/lakme.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Lakme 9 to 5 CC Cream</p>
+												         <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+												    </div>
+												    <div class="line"></div>
+												    <div class="itemSection">
+
+												      <div class="item">
+												        <div class="itemHeadName">
+												          <p>Top Deals for Electronics</p>
+												        </div>
+
+												        <div class="viewAllSection">
+												          <div class="viewAllButton">
+												            <a class="anchorimg" th:href="@{/electronic}">
+												            <p class="viewAllText">VIEW ALL</p>
+												          </a>
+												          </div>
+												        </div>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/apple.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Mobiles</p>
+												        <a class="anchorimg" href="form2.html">
+												        <p class="buyNowText">Buy Now</p>
+												      </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/speaker.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Bluetooth Speaker</p>
+												          <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/earphone.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Mivi earphones</p>
+												         <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/neckband.webp" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">ALPHA neckband</p>
+												          <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+												    </div>
+												    <div class="line"></div>
+												    <div class="itemSection">
+
+												      <div class="item">
+												        <div class="itemHeadName">
+												          <p>Top Deals for Medicine</p>
+												        </div>
+
+												        <div class="viewAllSection">
+												          <div class="viewAllButton">
+												            <a th:href="@{/medicine}">
+												            <p class="viewAllText">VIEW ALL</p>
+												          </a>
+												          </div>
+												        </div>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/vicks.jpeg" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Vicks vapourab</p>
+												          <a th:href="@{/form}"  >
+												        <p class="buyNowText">Buy Now</p>
+												      </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/dolo.jpeg" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Paracetamol DOLO 650</p>
+												           <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/crepe.jpeg" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Cotton crepe bandage</p>
+												          <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+
+												      <div class="item">
+												        <img src="/images/wrist.jpeg" alt="topDeal" class="itemImg">
+												        <p class="itemDescription">Wrist Bandage</p>
+												          <a th:href="@{/form}"  >
+												          <p class="buyNowText">Buy Now</p>
+												        </a>
+												      </div>
+												    </div>
+
+												    <footer class="footer">
+												      <div class="footer-container">
+												          <div class="footer-section about">
+												              <h2>About Us</h2>
+												              <p>We are dedicated to providing the best shopping experience with a focus on quality, innovation, and customer satisfaction.</p>
+												          </div>
+												          <div class="footer-section links">
+												              <h2>Quick Links</h2>
+															  <ul>
+															                  <li><a th:href="@{/home}">Home</a></li>
+															                  <li><a th:href="@{/about}">About</a></li>
+															                  <li><a th:href="@{/categories}">Shop</a></li>
+															                  <li><a th:href="@{/contact}">Contact</a></li>
+															              </ul>
+												          </div>
+												          <div class="footer-section contact">
+												              <h2>Contact Us</h2>
+												              <p>Email: support@quickcart.com</p>
+												              <p>Phone: +1 (555) 123-4567</p>
+												              <p>Address: 123 Main Street, Anywhere, World</p>
+												          </div>
+												      </div>
+												      <div class="footer-bottom">
+												          <p>&copy; 2025 QuickCart. All rights reserved.</p>
+												      </div>
+												  </footer>
+
+
+												
+												
+
+
+
+
+
+
+
+
+			
+				   
+				   
+
+	</body>
+</html>
